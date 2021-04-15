@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for obj in data %}
+        <h1>{{obj.news_header}}</h1>
+        <p>{{obj.date}} {{obj.reporter}}</p>
+        <h2>{{obj.news}}<br></h2>
+    {% endfor %}
+{% endblock %}
