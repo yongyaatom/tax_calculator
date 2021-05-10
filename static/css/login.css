@@ -1,0 +1,23 @@
+body{
+    height: 100vh;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(150deg, #3e32a8, #e310c7);
+}
+
+.box{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    position: absolute;
+}
+
+.box form{
+    width: 250px;
+    padding: 20px;
+    margin: auto;
+    background: white;
+
+    border-radius: 6px;
+}

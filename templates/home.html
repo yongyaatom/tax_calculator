@@ -1,32 +1,70 @@
-{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="leftNav">
+                <img src="image.jpg" alt="logo image">
+            </div>
+            <div class="rightNav">
+                <a href="{% url 'news' %}">News</a>
+                {% if user.is_authenticated %}
+                    Hello, {{user.first_name}}
+                    <a href="authentication/logout">logout</a>
+                {% else %}
+                    <a href="authentication/registration">Register</a>
+                    <a href="authentication/login">login</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="header">
+            <h1>TAX CALCULATOR NEPAL</h1>
 
-{% block content %}
-<div id="header">
-    <h1>TAX CALCULATOR NEPAL</h1>
-</div>
-<h1>GIVE YOUR DETAIL</h1>
-<h2>Personal status</h2>
-<form action="calc" method="post">
-    {% csrf_token %}
+            <form action="calc" method="post">
+                {% csrf_token %}
+                <div class="option">
+                    Personal status: <select name='gender'>
+                    <option value="married" selected>Married</option>
+                    <option value="unmarried">Unmarried</option>
+                    </select>
+                </div>
+                <div class="fill">
+                    Enter your Salary: <input type="text" name='salary'><br><br>
+                    Number of Month: <input type="text" name="month"><br><br>
+<!--                    Number of Months: <label for="month"></label>-->
+<!--                      Number of Months:<select id="month1" name="month">-->
+<!--                        <option value="one">1</option>-->
+<!--                        <option value="two">2</option>-->
+<!--                        <option value="three">3</option>-->
+<!--                        <option value="four">4</option>-->
+<!--                        <option value="five">5</option>-->
+<!--                        <option value="six">6</option>-->
+<!--                         <option value="seven">7</option>-->
+<!--                        <option value="eight">8</option>-->
+<!--                        <option value="nine">9</option>-->
+<!--                        <option value="ten">10</option>-->
+<!--                        <option value="eleven">11</option>-->
+<!--                        <option value="twelve">12</option>-->
+<!--                    </select>-->
 
-        <h1>TAX CALCULATOR NEPAL</h1>
 
-    <select name='gender'>
-        <option value="married" selected>Married</option>
-        <option value="unmarried">Unmarried</option>
-    </select>
-    <br><br>
-    Enter your Salary: <input type="text" name='salary'><br><br>
-    Number of Moths: <input type="text" name="month"><br><br>
-    Number of Bonus: <input type="text" name="bonus"><br><br>
-    Medical expenses: <input type="text" name="expense"><br><br>
-    <input type = "submit">
-</form>
-<h1>Total income: {{total}}</h1>
-<h1>Result: {{result}}</h1>
+                    Number of Bonus: <input type="text" name="bonus"><br><br>
+                    Medical expenses: <input type="text" name="expense"><br><br>
+                    <h2>Total income: {{total}}</h2>
+                    <h2>Result: {{result}}</h2>
+                </div>
+                <div class="clicking">
+                    <input class="left hello" type="reset">
+                    <input class="right hello" type = "submit">
+                </div>
+            </form>
 
-<a href="{% url 'news' %}">News</a>
-<a href="authentication/registration">Register</a>
-<a href="authentication/login">login</a>
-<a href="authentication/logout">logout</a>
-{% endblock %}
+        </div>
+    </body>
+</html>

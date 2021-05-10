@@ -1,0 +1,95 @@
+body{
+    width: 100%;
+    height: 110%;
+    padding: 0px;
+    margin: 0px;
+    background: white;
+    font-family: arial;
+}
+.nav{
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    line-height: 4;
+    color: white;
+    display: flex;
+    padding: 10px;
+    background: black;
+}
+
+.leftNav{
+    width: 50%;
+}
+
+.rightNav{
+    width: 50%;
+    text-align: right;
+
+}
+
+.nav a{
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    padding: 50px;
+}
+
+.nav a:hover{
+    color: gray;
+    font-weight: bold;
+}
+
+.header{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.header h1{
+    width: 500px;
+    margin: auto;
+    padding-button: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+form{
+    border: 5px solid lightgray;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+form .option{
+    padding: 10px;
+    padding-left: 110px;
+
+}
+form .fill{
+    width: 80%;
+    margin: auto;
+    background: white;
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form .clicking{
+   padding: 10px;
+   padding-left: 400px;
+}
+
+form .clicking .hello{
+    width: 150px;
+    height: 30px;
+}
+
+
+@media only screen and (max-width:1024px){
+    .nav{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768){
+
+}
