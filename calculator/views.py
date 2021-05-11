@@ -1,10 +1,13 @@
-from django.shortcuts import render
-from .models import News
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import News, Logo
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html', {'name': 'Home'})
+    logoImage = Logo()
+    logoImage.img = 'image.jpg'
+    return render(request, 'home.html', {'name': 'Home', 'logoImage': logoImage})
 
 
 # Creating Function calc to calculate the tax according to the information provided by the user
@@ -19,7 +22,11 @@ def calc(request):
 
     # Calculating tax for Unmarried user
     if married == "married":
-        if 45000 < total_salary <= 100000:
+        if salary1 is None or months is None or bon is None or expense is None:
+            total = 0
+            res = 'Please Fill all the information'
+            return render(request, 'home.html', {'result': res, 'total': total})
+        elif 45000 < total_salary <= 100000:
             total = ((salary1 * months) + bon)  # Formula to calculate total salary
             res = (1 / 100) * ((salary1 * months) - (bon + expense))  # Formula to calculate tax
             return render(request, 'home.html', {'result': res, 'total': total})
@@ -78,8 +85,7 @@ def calc(request):
             return render(request, 'home.html', {'total': total, 'result': res})
 
         else:
-            return render(request, 'home.html', {'result': "You don't have to pay tax. If your salary is less than "
-                                                           "NRS 40,000"})
+            return render(request, 'home.html', {'result': "No need to pay tax"})
 
 
 # Function to connect the news in News.html

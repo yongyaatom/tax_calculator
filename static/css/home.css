@@ -18,7 +18,11 @@ body{
 }
 
 .leftNav{
-    width: 50%;
+    width: 200px;
+}
+
+.leftNav img{
+    border: 2px white solid;
 }
 
 .rightNav{
@@ -85,11 +89,9 @@ form .clicking .hello{
 
 
 @media only screen and (max-width:1024px){
-    .nav{
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 768){
 
 }
+
+/*@media only screen and (max-width: 768){
+
+}*/

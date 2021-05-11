@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -10,7 +11,7 @@
     <body>
         <div class="nav">
             <div class="leftNav">
-                <img src="image.jpg" alt="logo image">
+                <img src="{% static 'images/img.jpg' %}" alt="logo image" width="150px" height="100px">
             </div>
             <div class="rightNav">
                 <a href="{% url 'news' %}">News</a>
@@ -64,6 +65,13 @@
                     <input class="right hello" type = "submit">
                 </div>
             </form>
+            <div class="msg">
+                {% for message in messages %}
+                    <h3>Warning!:{{messages}}</h3>
+                {% endfor %}
+            </div>
+
+
 
         </div>
     </body>

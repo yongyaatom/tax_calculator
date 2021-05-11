@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -8,3 +9,7 @@ class News(models.Model):
     reporter = models.CharField(max_length=40)
     news_header = models.CharField(max_length=200)
     news = models.TextField()
+
+
+class Logo:
+    img: str

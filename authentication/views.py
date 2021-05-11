@@ -9,6 +9,7 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
+
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
