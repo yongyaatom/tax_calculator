@@ -1,10 +1,9 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% load static %}
+{% static "images" as baseUrl %}
     {% for obj in data %}
         <h1>{{obj.news_header}}</h1>
         <p>{{obj.date}} {{obj.reporter}}</p>
-
+        <img src="{{obj.img.url}}" alt="" width="300px" height="200px">
         <h2>{{obj.news}}<br></h2>
     {% endfor %}
-{% endblock %}
+
