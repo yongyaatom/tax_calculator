@@ -9,6 +9,10 @@
     <title>Login Page</title>
 </head>
 <body>
+    <div class="rightNav">
+        <a href="{% url 'registration' %}">Registration</a>
+        <a href="{% url 'home' %}">Home</a>
+    </div>
     <div class="box">
         <form action="login" method="post">
             {% csrf_token %}
@@ -22,6 +26,9 @@
                 <h3>{{message}}</h3>
             {% endfor %}
         </div>
-    </div>
+    </div><br><br><br><br><br><br><br>
+    <footer>
+        <h3><center>Copyright &copy; tax calculator 2021</center></h3>
+    </footer>
 </body>
 </html>

@@ -1,39 +1,31 @@
 body{
-    height: 100vh;
+    background-color: silver;
     width: 100%;
+    height: 100%;
     padding: 0px;
     margin: 0px;
-    background: silver;
-}
-.rightNav{
-    height: 80px;
-    background-color: gray;
-  
 }
 
+.rightNav{
+    background-color: gray;
+    height: 80px;
+}
 .rightNav a{
     float: right;
+    padding: 20px;
     text-decoration: none;
-    padding: 20px;
     color: white;
-}
-.box{
-    width: 100%;
-    height: 250px;
-    margin-top: 90px;
-    text-align: center;
+
 }
 
-.box form{
-    width: 250px;
+.rightNav a:hover{
+    color: black;
+}
+
+.news h3{
     padding: 20px;
-    padding-top: 40px;
-    margin: auto;
-    background: white;
-    height: 300px;
-    border-radius: 6px;
+    text-align: justify;
 }
-
 footer{
     padding: 0px;
     margin: 0px;

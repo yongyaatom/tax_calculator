@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/registration.css' %}"/>
 </head>
 <body>
+    <div class="rightNav">
+        <a href="{% url 'home' %}">Home</a>
+    </div>
     <div class="box">
         <form id="form1" action="registration" method="post">
             {% csrf_token %}
@@ -27,5 +30,11 @@
             {% endfor %}
         </div>
     </div>
-</body>
+    
+</body><br><br><br><br>
+
+<footer>
+    <hr size="4" color="white">
+    <h3><center>Copyright &copy; tax calculator 2021</center></h3>
+</footer>
 </html>

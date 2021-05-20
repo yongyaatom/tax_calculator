@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
 from .models import News, Logo
 
 
@@ -13,20 +12,20 @@ def home(request):
 # Creating Function calc to calculate the tax according to the information provided by the user
 def calc(request):
     # Requesting and taking the information from html to our local variable
-    married = (request.POST['gender'])
-    salary1 = int(request.POST['salary'])
-    months = int(request.POST['month'])
-    bon = int(request.POST['bonus'])
-    expense = int(request.POST['expense'])
-    total_salary = (salary1 * months) - bon
+    try:
+        married = (request.POST['gender'])
+        salary1 = int(request.POST['salary'])
+        months = int(request.POST['month'])
+        bon = int(request.POST['bonus'])
+        expense = int(request.POST['expense'])
+        total_salary = (salary1 * months) - bon
+    except ValueError as ERROR:
+        return render(request, 'home.html', {'result': "Please fill the form"})
 
     # Calculating tax for Unmarried user
+        
     if married == "married":
-        if salary1 is None or months is None or bon is None or expense is None:
-            total = 0
-            res = 'Please Fill all the information'
-            return render(request, 'home.html', {'result': res, 'total': total})
-        elif 45000 < total_salary <= 100000:
+        if 45000 < total_salary <= 100000:
             total = ((salary1 * months) + bon)  # Formula to calculate total salary
             res = (1 / 100) * ((salary1 * months) - (bon + expense))  # Formula to calculate tax
             return render(request, 'home.html', {'result': res, 'total': total})
@@ -50,7 +49,6 @@ def calc(request):
             total = ((salary1 * months) + bon)
             res = (36 / 100) * ((salary1 * months) - (bon + expense))
             return render(request, 'home.html', {'total': total, 'result': res})
-
         else:
             return render(request, 'home.html', {'result': "You don't have to pay tax. If your salary is less than "
                                                            "NRS 40,000"})

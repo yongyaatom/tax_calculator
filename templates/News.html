@@ -1,9 +1,32 @@
 {% load static %}
 {% static "images" as baseUrl %}
-    {% for obj in data %}
-        <h1>{{obj.news_header}}</h1>
-        <p>{{obj.date}} {{obj.reporter}}</p>
-        <img src="{{obj.img.url}}" alt="" width="300px" height="200px">
-        <h2>{{obj.news}}<br></h2>
-    {% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rightNav">
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+    <div class="news">
+        {% for obj in data %}
+            <center><h2>{{obj.news_header}}</h2></center>
+            <center>{{obj.date}} {{obj.reporter}}</center><br>
+            <center><img src="{{obj.img.url}}" alt="" width="300px" height="200px"></center><br>
+            <h3>{{obj.news}}</h3><br>
+            <hr size="4">
+        {% endfor %}
+    </div>
+  
+    <footer>
+        <h3><center>Copyright &copy; tax calculator 2021</center></h3>
+    </footer>  
+</body>
+</html>
 
+  

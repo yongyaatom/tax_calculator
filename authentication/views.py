@@ -22,7 +22,7 @@ def login(request):
             return redirect('/')
 
         else:
-            messages.info(request, 'Incorrect User or Password')
+            messages.info(request, 'Incorrect Username or Password')
             return redirect('login')
 
     else:
@@ -62,10 +62,10 @@ def registration(request):
         elif len(first_name) > 20:
             messages.info(request, 'Length of the Username must be Smaller than 20 character')
             return redirect('registration')
-        elif first_name in string.digits:
+        elif first_name not in string.digits:
             messages.info(request, 'Numbers and special Character is not allowed in First Name')
             return redirect('registration')
-        elif last_name in string.digits:
+        elif last_name  not in string.digits:
             messages.info(request, 'Numbers and special Character is not allowed in Last Name')
             return redirect('registration')
         elif username in string.digits:

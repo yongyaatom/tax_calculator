@@ -1,16 +1,28 @@
 body{
-    height: 100vh;
+    height: 70%;
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-image: linear-gradient(150deg, #3e32a8, #e310c7);
+    background: silver;
 }
 
+.rightnav{
+    background-color: gray;
+    height: 50px;
+
+}
+
+.rightnav a{
+    float: right;
+    padding-top: 10px;
+    padding-right: 40px;
+    text-decoration: none;
+    color: white;
+}
 .box{
     width: 100%;
     margin-top: 40px;
     text-align: center;
-    position: absolute;
 }
 
 .box form{
@@ -27,4 +39,18 @@ body{
     margin: auto;
     background: white;
     color: red;
+}
+
+footer{
+    padding: 0px;
+    margin: 0px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+footer h3{
+    height: 40px;
+    padding-top: 20px;
 }

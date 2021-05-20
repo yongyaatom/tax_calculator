@@ -75,9 +75,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tax_news',
-
         'HOST': 'localhost',
-        'PORT': '3306',
+        
         'USER': 'root',
         'PASSWORD': 'admin',
     }
